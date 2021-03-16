@@ -1281,9 +1281,7 @@ static ssize_t proc_gesture_control_write(struct file *file, const char __user *
 
 	if (UpVee_enable || DouSwip_enable || LeftVee_enable || RightVee_enable
 			|| Circle_enable || DouTap_enable || Sgestrue_enable || Mgestrue_enable
-		|| Wgestrue_enable || SingleTap_enable || Enable_gesture || Down2UpSwip_enable
-		|| Up2DownSwip_enable || Right2LeftSwip_enable || Left2RightSwip_enable
-		|| s2w_switch || dt2w_switch) {
+		|| Wgestrue_enable || SingleTap_enable || Enable_gesture  || s2w_switch || dt2w_switch) {
 		value = 1;
 	} else {
 		value = 0;
