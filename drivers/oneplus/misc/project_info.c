@@ -568,7 +568,8 @@ struct a_board_version{
 struct main_board_info{
    int  prj_version;
    int  hw_version;
-   int  rf_version;
+   int  rf_min;
+   int  rf_max;
    char  version_name[32];
 };
 
@@ -576,42 +577,58 @@ struct a_board_version a_board_version_string_arry_gpio[]={
 
     {0,   "NOQET"},
     {1,   "QET"},
+    {2,   "QET_New"},
 };
 
 struct main_board_info main_board_info_check[]={
-	/*  prj      hw       rf        version*/
-	{   11     ,  11     , NONDEFINE      ,"19811 T0"},
-	{   11     ,  12     , NONDEFINE      ,"19811 EVT1"},
-	{   11     ,  13     , NONDEFINE      ,"19811 EVT2"},
-	{   11     ,  14     , NONDEFINE      ,"19811 DVT"},
-	{   11     ,  15     , NONDEFINE      ,"19811 PVT/MP"},
-	{   11     ,  51     , NONDEFINE      ,"19811 EVT2 SEC"},
-	{   11     ,  52     , NONDEFINE      ,"19811 DVT SEC"},
-	{   11     ,  53     , NONDEFINE      ,"19811 PVT/MP SEC"},
+	/*  prj      hw       rf_min        rf_max       version*/
+	{   11     ,  11     , NONDEFINE  , NONDEFINE  , "19811 T0"},
+	{   11     ,  12     , NONDEFINE  ,  NONDEFINE , "19811 EVT1"},
+	{   11     ,  13     , NONDEFINE  ,  NONDEFINE , "19811 EVT2"},
+	{   11     ,  14     , NONDEFINE  ,  NONDEFINE , "19811 DVT"},
+	{   11     ,  15     , NONDEFINE  ,  NONDEFINE , "19811 PVT/MP"},
+	{   11     ,  51     , NONDEFINE  ,  NONDEFINE , "19811 EVT2 SEC"},
+	{   11     ,  52     , NONDEFINE  ,  NONDEFINE , "19811 DVT SEC"},
+	{   11     ,  53     , NONDEFINE  ,  NONDEFINE , "19811 PVT/MP SEC"},
 
-	{   12     ,  11     , 12     ,"19855 T0"},
-	{   12     ,  12     , 12     ,"19855 EVT1"},
-	{   12     ,  13     , 12     ,"19855 EVT2"},
-	{   12     ,  14     , 12     ,"19855 DVT"},
-	{   12     ,  15     , 12     ,"19855 PVT/MP"},
+	{   12     ,  11     , 12   ,  NONDEFINE , "19855 T0"},
+	{   12     ,  12     , 12   ,  NONDEFINE , "19855 EVT1"},
+	{   12     ,  13     , 12   ,  NONDEFINE , "19855 EVT2"},
+	{   12     ,  14     , 12   ,  NONDEFINE , "19855 DVT"},
+	{   12     ,  15     , 12   ,  NONDEFINE , "19855 PVT/MP"},
 
 
-	{   12     ,  11     , NONDEFINE      ,"19821 T0"},
-	{   12     ,  12     , NONDEFINE      ,"19821 EVT1"},
-	{   12     ,  13     , NONDEFINE      ,"19821 EVT2"},
-	{   12     ,  14     , NONDEFINE      ,"19821 DVT"},
-	{   12     ,  54     , NONDEFINE      ,"19821 EVT2 SEC"},
-	{   12     ,  55     , NONDEFINE      ,"19821 DVT SEC"},
-	{   12     ,  15     , NONDEFINE      ,"19821 PVT/MP"},
+	{   12     ,  11     , NONDEFINE  , NONDEFINE  , "19821 T0"},
+	{   12     ,  12     , NONDEFINE  , NONDEFINE  , "19821 EVT1"},
+	{   12     ,  13     , NONDEFINE  , NONDEFINE  , "19821 EVT2"},
+	{   12     ,  14     , NONDEFINE  , NONDEFINE  , "19821 DVT"},
+	{   12     ,  54     , NONDEFINE  , NONDEFINE  , "19821 EVT2 SEC"},
+	{   12     ,  55     , NONDEFINE  , NONDEFINE  , "19821 DVT SEC"},
+	{   12     ,  15     , NONDEFINE  , NONDEFINE  , "19821 PVT/MP"},
 
-	{   13     ,  11     , NONDEFINE      ,"19867 T0"},
-	{   13     ,  12     , NONDEFINE      ,"19867 EVT1"},
-	{   13     ,  13     , NONDEFINE      ,"19867 EVT2"},
-	{   13     ,  14     , NONDEFINE      ,"19867 DVT"},
-	{   13     ,  15     , NONDEFINE      ,"19867 PVT/MP"},
+	{   13     ,  11     , NONDEFINE  , NONDEFINE  , "19867 T0"},
+	{   13     ,  12     , NONDEFINE  , NONDEFINE  , "19867 EVT1"},
+	{   13     ,  13     , NONDEFINE  , NONDEFINE  , "19867 EVT2"},
+	{   13     ,  14     , NONDEFINE  , NONDEFINE  , "19867 DVT"},
+	{   13     ,  15     , NONDEFINE  , NONDEFINE  , "19867 PVT/MP"},
 
-	{   11     ,  11     ,NONDEFINE,"19811 T0"},
-	{NONDEFINE,NONDEFINE,NONDEFINE,"Unknown"}
+	{   11     ,  11     ,NONDEFINE, NONDEFINE , "19811 T0"},
+
+        /* board info for 20801 */
+        {   11     ,  11     , 13  , 15    ,"T0"},
+        {   11     ,  12     , 13  , 15    ,"EVT1"},
+        {   11     ,  13     , 13  , 15    ,"DVT"},
+        {   11     ,  14     , 13  , 15    ,"PVT"},
+        {   11     ,  34     , 13  , 15    ,"PVT"},
+        {   11     ,  53     , 13  , 15    ,"DVT"},
+        {   11     ,  54     , 13  , 15    ,"PVT"},
+        {   11     ,  21     , 13  , 15    ,"PVT"},
+        {   11     ,  22     , 13  , 15    ,"PVT"},
+        {   11     ,  23     , 13  , 15    ,"PVT"},
+        {   11     ,  24     , 13  , 15    ,"PVT"},
+        {   11     ,  25     , 13  , 15    ,"PVT"},
+        /* board info for 20801 end */
+	{NONDEFINE , NONDEFINE , NONDEFINE , NONDEFINE , "Unknown"}
 };
 
 uint32 get_hw_version(void)
@@ -676,8 +693,7 @@ int __init init_project_info(void)
     {
         if(project_info_desc->prj_version == main_board_info_check[i].prj_version &&
            project_info_desc->hw_version  == main_board_info_check[i].hw_version &&
-          (project_info_desc->rf_v1  == main_board_info_check[i].rf_version ||
-           NONDEFINE   == main_board_info_check[i].rf_version ))
+          ((project_info_desc->rf_v1 >= main_board_info_check[i].rf_min && project_info_desc->rf_v1 <= main_board_info_check[i].rf_max) || (NONDEFINE   == main_board_info_check[i].rf_max)))
         {
            p = &main_board_info_check[i].version_name[0];
            break;
@@ -728,6 +744,9 @@ struct aboard_data {
     struct pinctrl                      *pinctrl;
     struct pinctrl_state                *pinctrl_state_active;
     struct pinctrl_state                *pinctrl_state_sleep;
+#ifdef CONFIG_ARCH_LITO
+    struct pinctrl_state                *pinctrl_state_suspend;
+#endif
     struct device *dev;
 };
 static struct aboard_data *data;
@@ -759,16 +778,33 @@ static int op_aboard_read_gpio(void)
 {
     int gpio0 = 0;
     int gpio1 = 0;
+#ifdef CONFIG_ARCH_LITO
+    int rc = 0;
+#endif
+
     if ( data == NULL || IS_ERR_OR_NULL(project_info_desc))
     {
         return 0 ;
     }
+
     if(data->support_aboard_gpio_0 == 1)
         gpio0 = gpio_get_value(data->aboard_gpio_0);
+
+#ifdef CONFIG_ARCH_LITO
+    rc = pinctrl_select_state(data->pinctrl,data->pinctrl_state_suspend);
+    if ( !rc) {
+        pr_err("%s: Failed to set suspend for aboardgpio\n", __func__);
+    }
+
+    gpio_direction_input(data->aboard_gpio_0);
+    gpio1 = gpio_get_value(data->aboard_gpio_0);
+#else
     if(data->support_aboard_gpio_1 == 1)
         gpio1 = gpio_get_value(data->aboard_gpio_1);
+#endif
 
-	a_board_val = gpio0;
+    a_board_val = gpio0 + gpio1;
+
     snprintf(Aboard_version, sizeof(Aboard_version), "%d %s",
     a_board_val, a_board_version_string_arry_gpio[a_board_val].name);
 
@@ -820,13 +856,24 @@ static int oem_aboard_probe(struct platform_device *pdev)
         goto err_pinctrl_lookup;
     }
 
-    if (data->pinctrl) {
-        rc = pinctrl_select_state(data->pinctrl,data->pinctrl_state_active);
+#ifdef CONFIG_ARCH_LITO
+    data->pinctrl_state_suspend = pinctrl_lookup_state(data->pinctrl, "oem_aboard_suspend");
+
+    if (IS_ERR_OR_NULL(data->pinctrl_state_suspend)) {
+        rc = PTR_ERR(data->pinctrl_state_suspend);
+        pr_err("%s pinctrl state suspend error!\n",__func__);
+        goto err_pinctrl_lookup;
     }
+#endif
+
+    rc = pinctrl_select_state(data->pinctrl,data->pinctrl_state_active);
+
     if(data->support_aboard_gpio_0 == 1)
         gpio_direction_input(data->aboard_gpio_0);
+
     if(data->support_aboard_gpio_1 == 1)
         gpio_direction_input(data->aboard_gpio_1);
+
     op_aboard_read_gpio();
 
     data->pinctrl_state_sleep = pinctrl_lookup_state(data->pinctrl, "oem_aboard_sleep");
