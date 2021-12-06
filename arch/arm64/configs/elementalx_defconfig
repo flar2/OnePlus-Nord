@@ -4,11 +4,11 @@
 #
 
 #
-# Compiler: Android (6305083 based on r377782c) clang version 10.0.5 (https://android.googlesource.com/toolchain/llvm-project 0cb1afdb060d6619a9837ab6866cf4adf2336416)
+# Compiler: Android (7284624, based on r416183b) clang version 12.0.5 (https://android.googlesource.com/toolchain/llvm-project c935d99d7cf2016289302412d708641d52d2f7ee)
 #
 CONFIG_GCC_VERSION=0
 CONFIG_CC_IS_CLANG=y
-CONFIG_CLANG_VERSION=100005
+CONFIG_CLANG_VERSION=120005
 CONFIG_CC_HAS_ASM_GOTO=y
 CONFIG_IRQ_WORK=y
 CONFIG_BUILDTIME_EXTABLE_SORT=y
@@ -19,7 +19,7 @@ CONFIG_THREAD_INFO_IN_TASK=y
 #
 CONFIG_INIT_ENV_ARG_LIMIT=32
 # CONFIG_COMPILE_TEST is not set
-CONFIG_LOCALVERSION="-ElementalX-OPN-2.04"
+CONFIG_LOCALVERSION="-ElementalX-OPN-2.05"
 # CONFIG_LOCALVERSION_AUTO is not set
 CONFIG_BUILD_SALT=""
 CONFIG_DEFAULT_HOSTNAME="(none)"
